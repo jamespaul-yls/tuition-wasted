@@ -44,12 +44,6 @@ body {
   gap: 18px;
 }
 
-.logo {
-  height: 62px;
-  width: auto;
-  flex-shrink: 0;
-}
-
 .header-text h1 {
   margin: 0;
   font-family: var(--font-serif);
@@ -251,10 +245,6 @@ main {
   .header-inner {
     padding: 20px 18px;
     gap: 12px;
-  }
-
-  .logo {
-    height: 44px;
   }
 
   main {
