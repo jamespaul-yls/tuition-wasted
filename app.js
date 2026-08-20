@@ -18,12 +18,66 @@
   var DEFAULT_COA = 338886;
 
   var MILESTONES = [
-    { threshold: 6, text: "That's a large oat latte, gone." },
-    { threshold: 85, text: "You've now burned a casebook." },
-    { threshold: 300, text: "That's a bar-prep lecture, up in smoke." },
-    { threshold: 1200, text: "A month of New Haven rent, evaporated." },
-    { threshold: 5000, text: "You could've bought a decent used car." },
-    { threshold: 20000, text: "That's a year of a 1L's take-home pay, gone in a break." }
+    {
+      threshold: 5,
+      options: [
+        "a mystery Beanie Baby at a flea market",
+        "an astronaut ice cream pouch",
+        "a subway token from 1970s New York",
+        "a single novelty rubber duck",
+        "a can of genuine Sriracha rooster sauce, discontinued batch"
+      ]
+    },
+    {
+      threshold: 60,
+      options: [
+        "a bespoke monocle",
+        "a taxidermied jackalope postcard",
+        "one lesson in competitive yodeling",
+        "a haunted Ouija board with 'provenance papers'",
+        "a single hand-blown artisanal ice cube"
+      ]
+    },
+    {
+      threshold: 300,
+      options: [
+        "a session with a professional cuddler",
+        "a competitive cheese-rolling entry fee",
+        "a rehair for a concert harpist's bow",
+        "a first-edition Garfield comic",
+        "a decommissioned parking meter, shipping included"
+      ]
+    },
+    {
+      threshold: 1200,
+      options: [
+        "a vintage neon sign restoration",
+        "an emotional-support peacock's plane ticket",
+        "a hand-carved cuckoo clock",
+        "a bespoke Stradivarius bow rehair",
+        "a certified fragment of a real meteorite"
+      ]
+    },
+    {
+      threshold: 5000,
+      options: [
+        "a certified chunk of the Berlin Wall",
+        "a Fabergé egg replica (the good fake)",
+        "a bomb-sniffing dog's continuing education course",
+        "a lifetime membership to a discreet whisky society",
+        "a used Zamboni, running condition not guaranteed"
+      ]
+    },
+    {
+      threshold: 20000,
+      options: [
+        "a decommissioned fire truck",
+        "a fractional stake in a minor-league baseball team",
+        "a private island rental for a long weekend",
+        "a competitive eating championship's grand prize purse",
+        "a fractional-ownership seat from a decommissioned Concorde"
+      ]
+    }
   ];
 
   // ---------- Elements ----------
@@ -83,7 +137,13 @@
     }
     if (idx !== currentMilestoneIndex) {
       currentMilestoneIndex = idx;
-      milestoneEl.textContent = idx >= 0 ? MILESTONES[idx].text : "";
+      if (idx >= 0) {
+        var options = MILESTONES[idx].options;
+        var pick = options[Math.floor(Math.random() * options.length)];
+        milestoneEl.textContent = "That's the cost of " + pick + ".";
+      } else {
+        milestoneEl.textContent = "";
+      }
     }
   }
 
