@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuition Wasted — an unofficial YLS break-cost timer</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <img class="logo" src="logo/yls-logo-cropped.png" alt="Yale Law School shield">
+    <div class="header-text">
+      <h1>Tuition Wasted</h1>
+      <p class="tagline">An unofficial break-cost timer</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="meter-card" aria-live="off">
+    <p class="meter-label">Tuition burned since you hit Start</p>
+    <p class="meter-amount" id="amount">$0.0000</p>
+    <p class="meter-elapsed" id="elapsed">00:00.00</p>
+    <p class="meter-rate" id="rateLine">You're incinerating <strong>$0.00/hour</strong> of tuition.</p>
+    <p class="meter-milestone" id="milestone" aria-live="polite"></p>
+  </section>
+
+  <section class="controls">
+    <button type="button" id="startBtn" class="btn btn-primary">Start</button>
+    <button type="button" id="pauseBtn" class="btn btn-secondary" disabled>Pause</button>
+    <button type="button" id="resetBtn" class="btn btn-secondary" disabled>Reset</button>
+  </section>
+
+  <section class="settings">
+    <div class="field">
+      <label for="coaInput">What you're paying Yale (3 yrs)</label>
+      <input type="text" id="coaInput" inputmode="decimal" autocomplete="off" spellcheck="false">
+    </div>
+
+    <div class="field">
+      <label for="basisSelect">Cost basis</label>
+      <select id="basisSelect">
+        <option value="continuous" selected>Every second of 3 years</option>
+        <option value="waking">Only waking hours (16h/day)</option>
+        <option value="schoolyear">Awake, school year only (~39 wks, 16h/day)</option>
+      </select>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Assumes total cost of attendance ÷ 3 years, spent continuously (or per the cost basis selected above). Purely illustrative.</p>
+  <p class="disclaimer">Tuition Wasted is an unofficial parody and is not affiliated with, endorsed by, or sponsored by Yale University or Yale Law School.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

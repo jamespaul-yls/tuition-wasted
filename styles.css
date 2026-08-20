@@ -1,0 +1,275 @@
+:root {
+  --yale-blue: #00356b;
+  --yale-blue-dark: #0d2b52;
+  --yale-blue-darker: #081b35;
+  --ink: #1c1c1c;
+  --ink-soft: #545b63;
+  --border: #dcdfe3;
+  --bg: #ffffff;
+  --bg-tint: #f7f8f9;
+
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  height: 62px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--yale-blue);
+  font-weight: normal;
+}
+
+.tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Main layout ---------- */
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+
+/* ---------- Meter card ---------- */
+
+.meter-card {
+  background: var(--yale-blue-dark);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.meter-label {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: #cfd9e6;
+}
+
+.meter-amount {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.meter-elapsed {
+  margin: 10px 0 0;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.15rem;
+  color: #cfd9e6;
+}
+
+.meter-rate {
+  margin: 20px 0 0;
+  font-size: 0.98rem;
+  color: #e6ebf1;
+}
+
+.meter-rate strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.meter-milestone {
+  min-height: 1.4em;
+  margin: 14px 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #ffd970;
+  transition: opacity 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter-milestone {
+    transition: none;
+  }
+}
+
+/* ---------- Controls ---------- */
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  flex: 1;
+  padding: 13px 18px;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  border-radius: 5px;
+  border: 1px solid var(--yale-blue);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+.btn-primary {
+  background: var(--yale-blue);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--yale-blue-darker);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--yale-blue);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-tint);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  border-color: var(--border);
+  color: var(--ink-soft);
+  background: var(--bg-tint);
+}
+
+/* ---------- Settings ---------- */
+
+.settings {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--yale-blue);
+  outline-offset: 1px;
+}
+
+#coaInput {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.site-footer p {
+  margin: 0 0 8px;
+}
+
+.disclaimer {
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+  .header-inner {
+    padding: 20px 18px;
+    gap: 12px;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  main {
+    padding: 28px 18px 16px;
+  }
+
+  .meter-card {
+    padding: 30px 18px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .settings {
+    grid-template-columns: 1fr;
+  }
+}
