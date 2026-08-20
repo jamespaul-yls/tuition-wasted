@@ -125,7 +125,7 @@
   function updateRateLine() {
     var perHour = ratePerSecond() * 3600;
     rateLineEl.innerHTML =
-      "You're incinerating <strong>" + formatMoney(perHour, 2) + "/hour</strong> of tuition.";
+      "That's <strong>" + formatMoney(perHour, 2) + "/hour</strong> of tuition.";
   }
 
   function updateMilestone(cost) {
